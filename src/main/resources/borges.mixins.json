@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "borges.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerPlayNetworkHandlerMixin",
+    "PlayerEntityMixin",
+    "AuthenticationResponseMixin",
+    "GameProfileMixin",
+    "BlockMixin"
+  ],
+  "client": [
+    "ClientPlayNetworkHandlerMixin",
+    "SessionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

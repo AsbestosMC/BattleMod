@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "borgesmod",
+  "version": "${version}",
+
+  "name": "Borges Mod",
+  "description": "Borges",
+  "authors": [
+    "vini2003"
+  ],
+  "contact": {
+  },
+
+  "license": "BORGES",
+  "icon": "assets/borges/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "borges.BorgesMod"
+    ]
+  },
+  "mixins": [
+    "borges.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.15.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
