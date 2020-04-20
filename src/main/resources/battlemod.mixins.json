@@ -4,17 +4,18 @@
   "package": "battlemod.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BlockMixin",
-    "ItemMixin",
+    "battlemod.accessor.AbstractFurnaceBlockEntityAccessor",
     "AbstractFurnaceBlockEntityMixin",
-    "PlayerEntityMixin",
-    "ContainerMixin",
-    "SlotMixin",
-    "BucketItemMixin",
     "BarrelBlockEntityMixin",
-    "TntEntityMixin",
+    "BlockMixin",
+    "BucketItemMixin",
     "ChestBlockEntityMixin",
-    "ChestBlockMixin"
+    "ChestBlockMixin",
+    "ContainerMixin",
+    "ItemMixin",
+    "PlayerEntityMixin",
+    "SlotMixin",
+    "TntEntityMixin"
   ],
   "client": [
   ],

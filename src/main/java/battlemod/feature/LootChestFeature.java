@@ -27,9 +27,12 @@ public class LootChestFeature extends Feature<DefaultFeatureConfig> {
 		if (world.getBlockState(surfacePosition.offset(Direction.DOWN)).getBlock() instanceof FluidBlock) {
 			return false;
 		}
+
 		world.setBlockState(surfacePosition, Blocks.CHEST.getDefaultState(), 1);
 		ChestBlockEntityAccessor accessor = (ChestBlockEntityAccessor) world.getBlockEntity(surfacePosition);
-		accessor.setLootChest(true);
+		if(accessor != null) {
+			accessor.setLootChest(true);
+		}
 		return true;
 	}
 }

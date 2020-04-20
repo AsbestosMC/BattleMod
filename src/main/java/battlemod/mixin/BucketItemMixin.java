@@ -1,7 +1,7 @@
 package battlemod.mixin;
 
 import battlemod.BattleMod;
-import battlemod.accessor.ItemExtensorAccessor;
+import battlemod.accessor.ItemUtil;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CauldronBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,13 +22,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BucketItemMixin {
 	@Inject(at = @At("HEAD"), cancellable = true, method = "use(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/TypedActionResult;")
 	void onUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> callbackInformationReturnable) {
-		BlockHitResult hitResult = (BlockHitResult) ItemExtensorAccessor.rayTrace(world, user, RayTraceContext.FluidHandling.ANY);
-
+		BlockHitResult hitResult = (BlockHitResult) ItemUtil.rayTrace(world, user, RayTraceContext.FluidHandling.ANY);
 		BlockState state = world.getBlockState(hitResult.getBlockPos());
-
 		if (state.getBlock() instanceof CauldronBlock) {
 			int level = state.get(CauldronBlock.LEVEL);
-
 			if (level == 3 && user.getStackInHand(hand).getItem() == Items.LAVA_BUCKET) {
 				ItemScatterer.spawn(world, hitResult.getBlockPos(), DefaultedList.copyOf(ItemStack.EMPTY, new ItemStack(Items.OBSIDIAN)));
 				user.setStackInHand(hand, new ItemStack(Items.BUCKET));

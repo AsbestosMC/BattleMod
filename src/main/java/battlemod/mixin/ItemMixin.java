@@ -2,7 +2,7 @@ package battlemod.mixin;
 
 import battlemod.BattleMod;
 import battlemod.accessor.AbstractFurnaceBlockEntityAccessor;
-import battlemod.accessor.ItemExtensorAccessor;
+import battlemod.accessor.ItemUtil;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ItemMixin {
 	@Inject(at = @At("HEAD"), method = "use(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/TypedActionResult;")
 	void onUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> callbackInformationReturnable) {
-		BlockHitResult hitResult = (BlockHitResult) ItemExtensorAccessor.rayTrace(world, user, RayTraceContext.FluidHandling.ANY);
+		BlockHitResult hitResult = (BlockHitResult) ItemUtil.rayTrace(world, user, RayTraceContext.FluidHandling.ANY);
 
 		BlockEntity blockEntity = world.getBlockEntity(hitResult.getBlockPos());
 
