@@ -1,11 +1,8 @@
-package borges.utility;
+package battlemod.utility;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -13,12 +10,10 @@ import org.apache.logging.log4j.util.TriConsumer;
 
 import java.util.ArrayDeque;
 import java.util.HashSet;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class VeinMiner {
-	public static void tryVeinmine(Predicate<BlockState> acceptPredicate, Predicate<BlockState> continuePredicate, TriConsumer<World, PlayerEntity, ItemStack> afterAction, TriConsumer<World, PlayerEntity, BlockPos> forEachPosition, World world, PlayerEntity player, BlockPos initialPosition, BlockState state, ItemStack stack) {
+	public static void tryVeinMine(Predicate<BlockState> acceptPredicate, Predicate<BlockState> continuePredicate, TriConsumer<World, PlayerEntity, ItemStack> afterAction, TriConsumer<World, PlayerEntity, BlockPos> forEachPosition, World world, PlayerEntity player, BlockPos initialPosition, BlockState state, ItemStack stack) {
 		HashSet<BlockPos> cache = new HashSet<>();
 
 		if (acceptPredicate.test(state) && player.isSneaking() && stack.getItem().canMine(state, world, initialPosition, player)) {

@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "battlemod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BlockMixin",
+    "ItemMixin",
+    "AbstractFurnaceBlockEntityMixin",
+    "PlayerEntityMixin",
+    "ContainerMixin",
+    "SlotMixin",
+    "BucketItemMixin",
+    "BarrelBlockEntityMixin",
+    "TntEntityMixin",
+    "ChestBlockEntityMixin",
+    "ChestBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
