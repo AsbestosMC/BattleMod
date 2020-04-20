@@ -1,9 +1,5 @@
-# Fabric Example Mod
+# BattleMod
 
-## Setup
+BattleMod is a Minecraft 1.15.2 mod focused on combat. It works fully on the logical server-side, and as such can be played in single-player, LAN, and normal multiplayer!
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+If you're a developer, bear in mind I made this in one day and a half and with utterly no sanity in mind. You've been warned.
